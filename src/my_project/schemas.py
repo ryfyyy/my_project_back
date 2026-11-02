@@ -14,3 +14,14 @@ class User(BaseModel):
     name: str
     email: str
     password: str
+
+class Pet(BaseModel):
+    pet_id: int
+    name: str
+    age: int
+    breed: str
+
+class PetResponce(BaseModel):
+    name: str
+    age: int
+    breed: str
