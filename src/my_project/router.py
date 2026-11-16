@@ -43,6 +43,11 @@ def get_status():
 async def signup(user: UserCreate, user_service:UserServiceDep):
     await user_service.signup(user)
 
+@router.get("/users/all", response_model=list[UserResponce])
+async def get_all(user_service:UserServiceDep):
+    users = await user_service.get_all()
+    return users
+
 @router.get("/users/{id}")
 async def get_user_by_id(id:int, user_service:UserServiceDep):
     user = await user_service.get_by_id(id)
