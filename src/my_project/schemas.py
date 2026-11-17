@@ -9,7 +9,7 @@ class StatusResponce(BaseModel):
 class UserResponce(BaseModel):
     name:str
     email:str
-    model_config = {"from_attributes": True}
+    # model_config = {"from_attributes": True}
 
 class UserCreate(BaseModel):
     login: Annotated[str, StringConstraints(min_length = 1)]

@@ -43,7 +43,7 @@ def get_status():
 async def signup(user: UserCreate, user_service:UserServiceDep):
     await user_service.signup(user)
 
-@router.get("/users/all", response_model=list[UserResponce])
+@router.get("/users/all") #, response_model=list[UserResponce]
 async def get_all(user_service:UserServiceDep):
     users = await user_service.get_all()
     return users
